@@ -1,6 +1,10 @@
-package shopping.model.entity;
+package user.dto;
 
-public class User {
+
+
+
+
+public class UserCert {
 	private Integer userId;
 	private String  userName;
 	private String  passwordHash;

@@ -114,7 +114,6 @@ public class ProductDaoImpl extends BaseDao implements ProductDao {
 			pstmt.setString(1,productName);
 			pstmt.setInt(2,productID);
 			
-			System.out.println(productID+productName);
 			int rowcount=pstmt.executeUpdate();
 			if(rowcount!=1) {
 					throw new RuntimeException("修改失敗");			

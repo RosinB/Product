@@ -1,14 +1,15 @@
-package shopping.model.dto;
+package user.entity;
 
+import lombok.Data;
 
-
-
-
-public class UserCert {
+@Data
+public class User {
 	private Integer userId;
 	private String  userName;
 	private String  passwordHash;
 	private String  salt;
+	
+
 	
 	
 }
