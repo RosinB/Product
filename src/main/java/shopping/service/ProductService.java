@@ -1,13 +1,13 @@
-package service;
+package shopping.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.dto.ProductDto;
-import model.entity.Product;
-import repository.ProductDao;
-import repository.ProductDaoImpl;
+import shopping.model.dto.ProductDto;
+import shopping.model.entity.Product;
+import shopping.repository.ProductDao;
+import shopping.repository.ProductDaoImpl;
 
 public class ProductService {
 		private ProductDao productDao=new ProductDaoImpl();

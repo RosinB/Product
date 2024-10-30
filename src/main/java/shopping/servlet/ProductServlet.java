@@ -1,4 +1,4 @@
-package servlet;
+package shopping.servlet;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -9,8 +9,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.dto.ProductDto;
-import service.ProductService;
+import shopping.model.dto.ProductDto;
+import shopping.service.ProductService;
 
 @WebServlet(urlPatterns = { "/product", "/product/*" })
 

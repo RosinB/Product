@@ -1,4 +1,4 @@
-package repository;
+package shopping.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

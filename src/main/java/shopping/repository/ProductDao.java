@@ -1,8 +1,8 @@
-package repository;
+package shopping.repository;
 
 import java.util.List;
 
-import model.entity.Product;
+import shopping.model.entity.Product;
 
 public interface ProductDao {
 	

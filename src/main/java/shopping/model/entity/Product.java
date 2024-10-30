@@ -1,4 +1,4 @@
-package model.entity;
+package shopping.model.entity;
 
 import java.math.BigDecimal;
 

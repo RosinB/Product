@@ -1,4 +1,4 @@
-package repository;
+package shopping.repository;
 
 import java.sql.Statement;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.entity.Product;
+import shopping.model.entity.Product;
 
 public class ProductDaoImpl extends BaseDao implements ProductDao {
 

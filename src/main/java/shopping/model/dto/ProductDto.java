@@ -1,4 +1,4 @@
-package model.dto;
+package shopping.model.dto;
 
 import java.math.BigDecimal;
 
