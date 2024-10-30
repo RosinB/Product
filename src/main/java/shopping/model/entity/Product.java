@@ -10,4 +10,6 @@ public class Product {
 	private String productName;
 	private BigDecimal price;
 	private Integer stockQuantity;
+	
+	
 }
