@@ -9,5 +9,7 @@ public interface UserDao {
 	List<User> findAllUser();
 	
 	User getUserName(String username);
+	
+	void updatePassword(Integer userId,String newPasswordHash);
 
 }

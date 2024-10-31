@@ -36,7 +36,7 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 
 	@Override
 	public User getUserName(String username) {
-		String sql="select user_id, user_name from user where user_name=?";
+		String sql="select user_id, user_name ,password_hash,salt from user where user_name=?";
 		try (PreparedStatement pstmt=conn.prepareStatement(sql)){
 			pstmt.setString(1, username);
 			try(ResultSet rs=pstmt.executeQuery()) {
@@ -44,7 +44,8 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 					User user=new User();
 					user.setUserId(rs.getInt("user_id"));
 					user.setUserName(rs.getString("user_name"));
-					
+					user.setPasswordHash(rs.getString("password_hash"));
+					user.setSalt(rs.getString("salt"));
 					return user;
 				}
 				
@@ -56,6 +57,26 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 		}
 		
 		return null;
+	}
+
+	@Override
+	public void updatePassword(Integer userId, String newPasswordHash) {
+		String sql = " update user set password_hash=? where user_id=?";
+		try(PreparedStatement pstmt =conn.prepareStatement(sql)) {
+			pstmt.setString(1,newPasswordHash);
+			pstmt.setInt(2, userId);
+			pstmt.executeUpdate();
+			
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		
+		}
+		
+		
+		
 	}
 
 	

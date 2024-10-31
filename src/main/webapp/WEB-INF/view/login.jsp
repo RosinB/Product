@@ -1,41 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="user.dto.*"%>
-   <%@page import="java.util.List"%>
-   
-<% 
-  	List<UserDto> userdtos= (List<UserDto>) request.getAttribute("userdto"); 
-   
-%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<fieldset>
-				<legend>User 列表</legend>
-				<table  class="pure-table pure-table-bordered">
-					<thead>
-						<tr>
-							<th>ID</th><th>商品名</th>
-						</tr>
-					</thead>
-					
-	
-					<% for(UserDto users : userdtos) { %>
-						<tr>
-							<td><%=users.getUserId() %></td>
-							<td><%=users.getUserName() %></td>
-						</tr>
-					<% } %>
-				</table>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<link rel="stylesheet" href="/javaweb/css/buttons.css">
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.wrapper {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body style="padding: 15px">
+		
+		<form class="pure-form" method="post" action="/Product/login">
+			
+			<fieldset>
+				<legend>🎫Login</legend>
+				👨‍⚕️:<input type="text" name="username" placeholder="請輸入帳號" required /><p />
+				🔐:<input type="password" name="password" placeholder="請輸入密碼" required /><p />
+				<button type="submit" class="pure-button pure-button-primary">登入</button><p />
+				${message} 
 			</fieldset>
-				</table>
-			</fieldset>
-
-	
-</body>
+			
+		</form>
+		
+	</body>
 </html>
