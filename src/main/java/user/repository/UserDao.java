@@ -10,6 +10,8 @@ public interface UserDao {
 	
 	User getUserName(String username);
 	
+	void addUserName(User user);
+	
 	void updatePassword(Integer userId,String newPasswordHash);
 
 }

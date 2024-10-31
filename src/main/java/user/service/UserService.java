@@ -3,6 +3,7 @@ package user.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import user.dto.AddUserDto;
 import user.dto.UserDto;
 import user.repository.*;
 import utils.Hash;
@@ -38,6 +39,27 @@ public class UserService {
 		return userdto;
 	
 	}
+//新增單筆
+	public void addUser(String userName,String password) {
+		
+		AddUserDto adduserdto=new AddUserDto();
+		
+		adduserdto.setUserName(userName);
+		adduserdto.setSalt(Hash.getSalt());
+		adduserdto.setPasswordHash(Hash.getHash(password, adduserdto.getSalt()));
+		User user=new User();
+		user.setUserName(adduserdto.getUserName());
+		user.setSalt(adduserdto.getSalt());
+		user.setPasswordHash(adduserdto.getPasswordHash());
+		
+		userdao.addUserName(user);
+		
+		
+		
+		
+	}
+	
+	
 /// 改密碼 
 	public void updatePassword(Integer userId,String userName,String oldPassword,String newPassWord) {
 		User user=userdao.getUserName(userName);

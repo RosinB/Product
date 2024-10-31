@@ -34,6 +34,24 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 		
 	}
 
+	
+	@Override
+	public void addUserName(User user) {
+		String sql="insert into user(user_name,password_hash,salt) values(?,?,?)";
+		try(PreparedStatement pstmt =conn.prepareStatement(sql)) {
+			pstmt.setString(1, user.getUserName());
+			pstmt.setString(2, user.getPasswordHash());
+			pstmt.setString(3, user.getSalt());
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("sqlexception");
+			e.printStackTrace();
+		}
+		
+	}
+
+
 	@Override
 	public User getUserName(String username) {
 		String sql="select user_id, user_name ,password_hash,salt from user where user_name=?";
