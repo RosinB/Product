@@ -51,7 +51,9 @@ public class UserServlet extends HttpServlet {
 						UserCert userCert=(UserCert)session.getAttribute("userCert");
 						userService.updatePassword(userCert.getUserId(), userCert.getUserName(), oldPassWord, newPassWord);
 						req.setAttribute("message", "密碼更新成功");
-						req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
+//						req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
+						resp.sendRedirect("/Product/index.html");
+
 					} catch (Exception e) {
 						req.setAttribute("message","密碼更新失敗");
 						req.getRequestDispatcher("/WEB-INF/view/userupdate.jsp").forward(req, resp);
@@ -59,7 +61,7 @@ public class UserServlet extends HttpServlet {
 					}
 					break;
 		}
-		
+
 		
 		
 		

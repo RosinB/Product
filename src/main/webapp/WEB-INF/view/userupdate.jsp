@@ -19,8 +19,8 @@
 				<form class="pure-form" method="post" action="/Product/user/update" >
 					<fieldset>
 						<legend>User 修改密碼 ${message} </legend>
-						<input type="text" name="userId" value="${userCert.userId} " readonly /><p /> 
-						<input type="text" name="username" value="${userCert.userName} " readonly /><p />
+						<input type="hidden" name="userId" value="${userCert.userId} " readonly /><p /> 
+						帳號名: <input type="text" name="username" value="${userCert.userName} " readonly /><p />
 						舊密碼: <input type="text" name="oldpassword"><p /> 
 						新密碼: <input type="text" name="newpassword"><p />
 						<button type="submit" class="button-success pure-button">Update Password</button>	  
