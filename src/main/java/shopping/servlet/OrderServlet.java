@@ -21,13 +21,28 @@ public class OrderServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer UserId= Integer.parseInt(req.getParameter("userid"));
-		OrderDto orderDto=orderService.findOrderState(UserId);
-		req.setAttribute("orderDto", orderDto);
+	    String userIdParam = req.getParameter("userid");
+	  
 
-		req.getRequestDispatcher("/WEB-INF/view/order.jsp").forward(req, resp);
+	    Integer userId;
+	    try {
+	        userId = Integer.parseInt(userIdParam);
+	    } catch (NumberFormatException e) {
+	        req.setAttribute("error", "Invalid User ID format.");
+	        req.getRequestDispatcher("/WEB-INF/view/order.jsp").forward(req, resp);
+	        return;
+	    }
 
-		
+	    // 查詢訂單
+	    OrderDto orderDto = orderService.findOrderState(userId);
+	    System.out.println("我在servlt "+orderDto);
+	    if (orderDto == null) {
+	        req.setAttribute("error", "No order found for the provided User ID.");
+	    } else {
+	        req.setAttribute("orderDto", orderDto);
+	    }
+
+	    req.getRequestDispatcher("/WEB-INF/view/order.jsp").forward(req, resp);
 	}
 
 	

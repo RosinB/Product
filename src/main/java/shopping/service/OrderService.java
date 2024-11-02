@@ -15,7 +15,6 @@ public class OrderService {
 	
 	public OrderDto findOrderState(Integer UserId) {
 		Order order=orderDao.FindOrderById(UserId);
-		
 		if(order==null) {
 			
 			System.out.println("我在orderService 找不到訂單");
@@ -32,7 +31,6 @@ public class OrderService {
 		orders.setUnitPrice(order.getUnitPrice());
 		orders.setSubtotal(order.getSubtotal());
 		orders.setOrderStatus(order.getOrderStatus());
-		
 		return orders;
 	}
 	
