@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="/WEB-INF/view/menu.jspf" %>
 
-	${userCert}
-	${message}
 </body>
 </html>
