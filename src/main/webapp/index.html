@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>美化頁面</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            font-size: 1.2em; /* 調整字體大小 */
+        }
+        th, td {
+            padding: 15px;
+        }
+        .link-table {
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        .link-table td {
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        .link-table a {
+            text-decoration: none;
+            color: #1f8dd6;
+            font-weight: bold;
+        }
+        .link-table a:hover {
+            color: #005cbf;
+        }
+    </style>
 </head>
 <body>
 
-
-
-<a href="/Product/hash?password=1234">拿到密碼的hash</a><p /> 
-<a href="/Product/product">商品單</a><p /> 
-<a href="/Product/user">使用者</a><p /> 
-<a href="/Product/login">登入頁面</a><p /> 
-<a href="/Product/user/update">改密碼</a><p /> 
-<a href="/Product/user/add">創建帳號</a><p /> 
+    <table class="link-table">
+        <tr>
+            <td colspan="5"><a href="/Product/hash?password=1234">拿到密碼的 hash</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Product/product">商品單</a></td>
+            <td><a href="/Product/user">使用者</a></td>
+            <td><a href="/Product/login">登入頁面</a></td>
+            <td><a href="/Product/user/update">改密碼</a></td>
+            <td><a href="/Product/user/add">創建帳號</a></td>
+        </tr>
+    </table>
 
 </body>
 </html>
