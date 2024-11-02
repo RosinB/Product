@@ -1,0 +1,12 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<div class="pure-menu pure-menu-horizontal" style="background-color: #dddddd;height: 50px; align-content: center;">
+	<!-- menu bar -->
+	<a href="/Product/login" class="pure-menu-heading pure-menu-link">登入</a>
+	<a href="/Product/user/add" class="pure-menu-heading pure-menu-link">簡單辦帳號</a>
+	<a href="/Product/user/update" class="pure-menu-heading pure-menu-link">修改密碼</a>
+	<a href="/Product/user" class="pure-menu-heading pure-menu-link">使用者資料</a>
+	<a href="/Product//shopping/product" class="pure-menu-heading pure-menu-link">商品</a>
+	<a href="/Product/order" class="pure-menu-heading pure-menu-link">訂購商品</a>
+	<a href="/Product/order/history" class="pure-menu-heading pure-menu-link">歷史訂單</a>
+	<a href="/Product/logout" class="pure-menu-heading pure-menu-link">登出</a>
+</div>

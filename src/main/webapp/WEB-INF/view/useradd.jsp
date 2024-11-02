@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="/javaweb/css/buttons.css">
 	</head>
 	<body style="padding: 15px">
+		<%@ include file="/WEB-INF/view/menu.jspf" %>
+	
 		<table>
 			
 			<td style="padding-left: 30px" valign="top">

@@ -16,6 +16,8 @@
 			<link rel="stylesheet" href="/Product/css/buttons.css">
 	</head>
 	<body style="padding:15px">
+		<%@ include file="/WEB-INF/view/menu.jspf" %>
+	
 	<form class="pure-form" method="post" action="/Product/product/update">
 			<fieldset>
 				<legend>Product 修改</legend>

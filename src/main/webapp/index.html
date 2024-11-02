@@ -12,26 +12,29 @@
             text-align: center;
         }
         table {
-            width: 100%;
+            width: 80%;
             margin: 0 auto;
             border-collapse: collapse;
-            font-size: 1.2em; /* 調整字體大小 */
+            font-size: 1.2em;
         }
         th, td {
             padding: 15px;
+            vertical-align: top;
+            text-align: center;
         }
         .link-table {
             margin: 20px auto;
             border: 1px solid #ccc;
         }
         .link-table td {
-            text-align: center;
             border: 1px solid #ccc;
         }
         .link-table a {
             text-decoration: none;
             color: #1f8dd6;
             font-weight: bold;
+            display: block;
+            margin-bottom: 10px; /* 增加間距 */
         }
         .link-table a:hover {
             color: #005cbf;
@@ -42,16 +45,23 @@
 
     <table class="link-table">
         <tr>
-            <td colspan="5"><a href="/Product/hash?password=1234">拿到密碼的 hash</a></td>
-        </tr>
-        <tr>
-            <td><a href="/Product/product">商品單</a></td>
-            <td><a href="/Product/user">使用者</a></td>
-            <td><a href="/Product/login">登入頁面</a></td>
-            <td><a href="/Product/user/update">改密碼</a></td>
-            <td><a href="/Product/user/add">創建帳號</a></td>
+            <td>
+                <a href="/Product/hash?password=1234">拿到密碼的 hash</a>
+            </td>
+            <td>
+                <a href="/Product/user">使用者 /user</a>
+                <a href="/Product/login">登入頁面 /login</a>
+                <a href="/Product/user/update">改密碼 /user/update</a>
+                <a href="/Product/user/add">創建帳號 /user/add</a>
+            </td>
+            <td>
+                <a href="/Product/shopping/product">商品單 /product</a>
+            </td>
         </tr>
     </table>
 
 </body>
 </html>
+
+
+

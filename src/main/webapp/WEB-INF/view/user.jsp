@@ -46,6 +46,8 @@ List<UserDto> userdtos = (List<UserDto>) request.getAttribute("userdto");
     }
 </style>
 </head>
+	<%@ include file="/WEB-INF/view/menu.jspf" %>
+
 <body>
 
 <div class="pure-form">

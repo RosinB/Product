@@ -29,17 +29,23 @@ public class CertServlet extends HttpServlet{
 		UserCert userCert=null;
 		try {
 			userCert=certService.getCert(username, passowrd);
-			System.out.println("我在certServlet"+userCert);
 
 		} catch (Exception e) {
 			req.setAttribute("message"," 密碼錯誤，請重試" );
 			req.getRequestDispatcher("WEB-INF/view/login.jsp").forward(req, resp);
-		
+			return;
 		}
 		HttpSession session =req.getSession();
 		session.setAttribute("userCert",userCert);
 		req.setAttribute("message","登入成功");
-		req.getRequestDispatcher("WEB-INF/view/result.jsp").forward(req, resp);
+		// 檢查 session 中的 redirectURL 是否有資料 ?
+		if(session.getAttribute("redirectURL")==null){			
+			req.getRequestDispatcher("index").forward(req, resp);
+		}else {
+			String redirectURL=session.getAttribute("redirectURL").toString();
+			resp.sendRedirect(redirectURL);
+			session.setAttribute("redirectURL", null);
+		}
 
 		
 		

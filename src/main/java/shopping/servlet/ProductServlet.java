@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import shopping.model.dto.ProductDto;
 import shopping.service.ProductService;
 
-@WebServlet(urlPatterns = { "/product", "/product/*" })
+@WebServlet(urlPatterns = { "/shopping/product", "/shopping/product/*" })
 
 public class ProductServlet extends HttpServlet {
 
