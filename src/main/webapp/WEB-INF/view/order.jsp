@@ -43,6 +43,7 @@
     </style>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/menu.jspf" %>
     <div class="container pure-form pure-form-stacked">
         <h2>Order Lookup</h2>
 
